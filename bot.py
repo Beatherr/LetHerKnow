@@ -8,27 +8,26 @@ import discord
 from discord.ext import commands, tasks
 from aiohttp import web
 
-BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN", "change_this_to_your_bot_token")
+BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN", "change_this_to_your_bot_token") # Change It
 ACTIVITY_KEY = os.getenv("ACTIVITY_KEY", "01171120")
 PORT = int(os.getenv("ACTIVITY_PORT", "8765"))
 
-STATUS_CHANNEL_ID = 1546911935159730287
+STATUS_CHANNEL_ID = change_this_to_channel_id # Change It
 
-ALLOWED_USER_IDS = [
-    938000353474007092,
-    1386274640229568572
+ALLOWED_USER_IDS = [ # Change It
+    add_user_ids
 ]
 
-RELATIONSHIP_START_DATE = datetime(2026, 8, 17)  # Çıkma tarihiniz
-SONG_URL = "https://open.spotify.com/intl-tr/track/4cUO8hsSg24RxA0mr3k9Nl?si=3c4a43c7c36f4ada"  # Özel şarkınızın linki
+RELATIONSHIP_START_DATE = datetime(YYYY, MM, DD)  # Change It
+SONG_URL = "Add any link"  # Change It
 
 # Belirttiğin Hassas Konum Koordinatları
 WEATHER_COORDS = "40.707285,30.114843"
 
 # --- EMBED GÖRSEL LİNKLERİ (İstediğin GIF/Fotoğraf Linkleriyle Değiştirebilirsin) ---
-THUMBNAIL_ONLINE = "https://cdn.discordapp.com/attachments/1533821318175264879/1554148400864301137/9CBCDFC8-4AE4-4BB2-8B39-D9DE734E339B.jpg?ex=6abd267d&is=6abbd4fd&hm=86c8009b05b70d64e65b89b2b653953f07c2db50f030a9ffe176b35705d0da87&"
-THUMBNAIL_OFFLINE = "https://klipy.com/gifs/cat-kitty-575"
-BANNER_URL = "https://cdn.discordapp.com/attachments/1533821318175264879/1554148400864301137/9CBCDFC8-4AE4-4BB2-8B39-D9DE734E339B.jpg?ex=6abd267d&is=6abbd4fd&hm=86c8009b05b70d64e65b89b2b653953f07c2db50f030a9ffe176b35705d0da87&"  # Veya tatlı bir anime/aesthetic banner linki
+THUMBNAIL_ONLINE = "change_it"
+THUMBNAIL_OFFLINE = "change_it"
+BANNER_URL = "change_it"  # Veya tatlı bir anime/aesthetic banner linki
 
 latest = {
     "online": False,
@@ -118,15 +117,15 @@ def build_embed():
     if not is_pc_online:
         embed = discord.Embed(
             title="🎀 ── PC Offline ── 🎀",
-            description="*Poyraz is currently away from his PC, missing you!* ✨\n\n🌸 ────────────────────── 🌸",
+            description="*Your Boyfriend is currently away from his PC, missing you!* ✨\n\n🌸 ────────────────────── 🌸",
             color=PINK_OFFLINE
         )
         embed.set_thumbnail(url=THUMBNAIL_OFFLINE)
-        embed.set_footer(text="Te iubesc Andrea 💕 • Waiting for him to come back...")
+        embed.set_footer(text="I love you 💕 • Waiting for him to come back...")
         return embed
 
     if is_afk:
-        title = "🥐 ── PC Online (Taking a Break) ── 🎀"
+        title = "🥐 ── PC Online (AFK) ── 🎀"
         color = PINK_AFK
     else:
         title = "🌸 ── PC Online & Active ── 🎀"
