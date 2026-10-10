@@ -71,7 +71,7 @@ class NudgeHandler(BaseHTTPRequestHandler):
                 try:
                     notification.notify(
                         title="❤️ You got touched!",
-                        message="Andrea touched you.",
+                        message="She touched you.",
                         app_name="PC Activity Monitor",
                         timeout=10
                     )
@@ -91,7 +91,7 @@ class NudgeHandler(BaseHTTPRequestHandler):
                 try:
                     notification.notify(
                         title="🛌 Time to Sleep!",
-                        message="Andrea says it's getting late. Go to sleep! 😴💖",
+                        message="She says it's getting late. Go to sleep! 😴💖",
                         app_name="PC Activity Monitor",
                         timeout=15
                     )
@@ -150,7 +150,7 @@ GAME_PROCESSES = {
     "BeamNG.drive.x64.exe": "BeamNG.drive / BeamMP",
     "BeamNG.drive.ui.exe": "BeamNG.drive / BeamMP",
     "BeamMP-Launcher.exe": "BeamMP",
-}
+} #You can change them or add them if you want
 
 IGNORED_TITLES = {
     "Program Manager",
@@ -161,7 +161,7 @@ IGNORED_TITLES = {
     "Ayarlar",
     "Calculator",
     "",
-}
+} #You can change them or add them if you want
 
 current_game = None
 game_started_time = None
